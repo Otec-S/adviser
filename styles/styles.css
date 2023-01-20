@@ -1,16 +1,20 @@
-body, header {
+body, .header, .nav, .page, {
   border: 1px solid red;
 }
 
-header {
-  width: 326px;
+.page {
+  width: 90%;
+  border: 5px solid black;
+  }
+
+.header {
   height: 119px;
   background-color: rgb(85,74,88);
   display: flex;
 }
 
-.header-title {
-  width: 309px;
+.header__title {
+  width: 33%;
   height: 71px;
   line-height: 1.1em;
   font-size: 32px;
@@ -19,5 +23,27 @@ header {
   font-weight: 100;
   padding-left: 20px;
   margin: auto;
+}
+
+.nav {
+  width: 67%;
+  height: 119px;
+  background-color: rgb(64,186,188);
+  display: flex;
+  justify-content:space-between;
+
+}
+
+.nav__title {
+  text-decoration: none;
+  font-family: jura, sans-serif;
+  line-height: 20px;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  margin: auto;
+}
+
+.nav__title_active {
+  color: black;
 
 }
