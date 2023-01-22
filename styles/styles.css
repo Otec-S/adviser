@@ -1,3 +1,26 @@
+/* ШРИФТЫ */
+
+@font-face {
+  src: url(../fonts/JuraBold.woff);
+  font-family: 'Jura Bold';
+  font-style: bold;
+}
+@font-face {
+  src: url(../fonts/JuraLight.woff);
+  font-family: 'Jura Light';
+  font-style: light;
+}
+@font-face {
+  src: url(../fonts/JuraMedium.woff);
+  font-family: 'Jura Medium';
+  font-weight: medium;
+}
+
+@font-face {
+  src: url(../fonts/JuraRegular.woff);
+  font-family: 'Jura';
+}
+
 /* ОБЩИЕ */
 .page {
   min-width: 1100px;
@@ -6,7 +29,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Jura Bold', Arial, Helvetica, sans-serif;
   font-size: 15px;
 }
 
@@ -21,7 +44,7 @@
   width: 30%;
   height: 71px;
   line-height: 1.1em;
-  font-size: 32px;
+  font-size: 35px;
   color: rgb(255, 255, 255);
   font-weight: 100;
   padding-left: 20px;
