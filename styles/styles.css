@@ -92,6 +92,10 @@
   padding-bottom: 60px;
 }
 
+.content__about-firm {
+  flex-direction: column;
+}
+
 .block {
   width: 100%;
   display: flex;
@@ -124,9 +128,33 @@
   margin: 0;
 }
 
+.block__description {
+  display: flex;
+  border: 1px solid #000;
+  background-color: lightgray;
+}
+
+.block__photo-place {
+  align-self: flex-start;
+  margin: 20px;
+}
+
+.block__photo {
+  width: 250px;
+  box-shadow: 0 0 15px 0 rgb(85 74 88);
+}
+
+.block__list_header {
+  margin: -40px;
+}
+
+.block__list {
+  margin: 10px;
+}
+
 /*************/
 
-.firm-description {
+/* .firm-description {
   box-sizing: content-box;
 }
 
@@ -145,7 +173,7 @@
   font-weight: 100;
   padding-left: 20px;
   margin: auto;
-}
+} */
 
 .cards {
   list-style: none;
