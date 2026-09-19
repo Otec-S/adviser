@@ -20,28 +20,28 @@
   font-family: 'Jura';
   src: url(../fonts/JuraLight.woff) format('woff');
   font-weight: 300;
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
   font-family: 'Jura';
   src: url(../fonts/JuraRegular.woff) format('woff');
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
   font-family: 'Jura';
   src: url(../fonts/JuraMedium.woff) format('woff');
   font-weight: 500;
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
   font-family: 'Jura';
   src: url(../fonts/JuraBold.woff) format('woff');
   font-weight: 700;
-  font-display: swap;
+  font-display: optional;
 }
 
 /* ОБЩИЕ */
@@ -52,6 +52,7 @@
 
 .page {
   max-width: 1600px;
+  min-height: 100vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -133,6 +134,7 @@ iframe:focus-visible {
   background-position: center;
   margin: 0;
   display: flex;
+  flex-grow: 1;
   padding-bottom: 60px;
 }
 
@@ -171,6 +173,11 @@ iframe:focus-visible {
   padding: 20px;
 }
 
+.address a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .block__title {
   line-height: 1.1em;
   font-size: 32px;
@@ -195,6 +202,8 @@ iframe:focus-visible {
   font-weight: 300;
   padding: 20px;
   margin: 0;
+  flex: 1 1 300px;
+  min-width: 0;
 }
 
 .block__text h3 {
@@ -213,6 +222,7 @@ iframe:focus-visible {
 .block__photo-place {
   align-self: flex-start;
   margin: 20px;
+  flex: 0 0 auto;
 }
 
 .block__photo {
@@ -329,15 +339,9 @@ iframe:focus-visible {
   transform: scale(1.2);
 }
 
-.card__link_button {
-  background-color: var(--color-teal-accessible);
-  color: var(--color-white);
-  padding: 10px 18px;
-  border-radius: 4px;
-}
-
-.card__link_button:hover {
-  transform: scale(1.05);
+/* На десктопе карточка начинает новый ряд — третья ячейка первого ряда остаётся пустой */
+.card_row-start {
+  grid-column-start: 1;
 }
 
 /* КЛИЕНТЫ */
@@ -409,6 +413,12 @@ iframe:focus-visible {
 
   .cards {
     grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: dense;
+  }
+
+  /* Фирма во второй колонке, Услуги встают на свободное место слева — серые карточки не граничат */
+  .card_row-start {
+    grid-column-start: 2;
   }
 
   .block__map {
@@ -438,6 +448,10 @@ iframe:focus-visible {
 
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  .card_row-start {
+    grid-column-start: auto;
   }
 
   .block__description {
