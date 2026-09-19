@@ -14,34 +14,48 @@
   --header-height: 119px;
 }
 
+/* УТИЛИТЫ */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ШРИФТЫ */
 
 @font-face {
   font-family: 'Jura';
   src: url(../fonts/JuraLight.woff) format('woff');
   font-weight: 300;
-  font-display: optional;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Jura';
   src: url(../fonts/JuraRegular.woff) format('woff');
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Jura';
   src: url(../fonts/JuraMedium.woff) format('woff');
   font-weight: 500;
-  font-display: optional;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Jura';
   src: url(../fonts/JuraBold.woff) format('woff');
   font-weight: 700;
-  font-display: optional;
+  font-display: swap;
 }
 
 /* ОБЩИЕ */

@@ -34,6 +34,7 @@ module.exports = function (eleventyConfig) {
   // building.jpg is used as a CSS background-image, so it is copied as-is
   eleventyConfig.addPassthroughCopy({ "src/images/building.jpg": "images/building.jpg" });
   eleventyConfig.addPassthroughCopy({ "src/images/favicon.svg": "images/favicon.svg" });
+  eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
 
   return {
     dir: {

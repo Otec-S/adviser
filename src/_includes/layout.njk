@@ -6,7 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }} — {{ site.shortName }}</title>
   <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="{{ site.shortName }}">
+  <meta property="og:title" content="{{ title }} — {{ site.shortName }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ title }} — {{ site.shortName }}">
+  <meta name="twitter:description" content="{{ description }}">
   <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "email": "{{ site.email }}",
+    "telephone": "{{ site.phones[0].tel }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ site.address }}",
+      "addressCountry": "RU"
+    }
+  }
+  </script>
   <link rel="preload" href="/fonts/JuraLight.woff" as="font" type="font/woff" crossorigin>
   <link rel="preload" href="/fonts/JuraRegular.woff" as="font" type="font/woff" crossorigin>
   <link rel="preload" href="/fonts/JuraMedium.woff" as="font" type="font/woff" crossorigin>
@@ -18,7 +43,7 @@
 <body class="page">
 
   <header class="header">
-    <h1 class="header__title"><a class="header__title-link" href="/">{{ site.name }}</a></h1>
+    <p class="header__title"><a class="header__title-link" href="/">{{ site.name }}</a></p>
     <nav class="nav" aria-label="Основная навигация">
       {% for item in site.nav %}
       <a href="{{ item.url }}" class="nav__title{% if item.key == page.key %} nav__title_active{% endif %}"{% if item.key == page.key %} aria-current="page"{% endif %}>{{ item.title }}</a>
