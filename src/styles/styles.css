@@ -35,28 +35,28 @@
   font-family: 'Jura';
   src: url(../fonts/JuraLight.woff) format('woff');
   font-weight: 300;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
   font-family: 'Jura';
   src: url(../fonts/JuraRegular.woff) format('woff');
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
   font-family: 'Jura';
   src: url(../fonts/JuraMedium.woff) format('woff');
   font-weight: 500;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
   font-family: 'Jura';
   src: url(../fonts/JuraBold.woff) format('woff');
   font-weight: 700;
-  font-display: swap;
+  font-display: block;
 }
 
 /* ОБЩИЕ */
