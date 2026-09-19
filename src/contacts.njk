@@ -13,11 +13,15 @@ key: contacts
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade"></iframe>
   <address class="address">
-    <h2>Адрес</h2>
+    <h2>Санкт-Петербург</h2>
     <p>{{ site.address }}</p>
     <p>
       {% for phone in site.phones %}<a href="tel:{{ phone.tel }}">{{ phone.display }}</a><br>{% endfor %}
     </p>
     <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    <h2>{{ site.tashkent.city }}</h2>
+    <p>
+      {% for phone in site.tashkent.phones %}<a href="tel:{{ phone.tel }}">{{ phone.display }}</a><br>{% endfor %}
+    </p>
   </address>
 </section>

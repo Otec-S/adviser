@@ -89,7 +89,7 @@ iframe:focus-visible {
   line-height: 1.1em;
   font-size: 35px;
   color: var(--color-white);
-  font-weight: 300;
+  font-weight: 700;
   text-decoration: none;
   user-select: none;
   padding: 16px 20px;
@@ -182,16 +182,11 @@ iframe:focus-visible {
   line-height: 1.1em;
   font-size: 32px;
   color: var(--color-white);
-  font-weight: 300;
+  font-weight: 700;
   padding: 20px 20px;
   margin: 0;
   background-color: var(--color-dark-grey);
   user-select: none;
-}
-
-.block__title_about-firm {
-  width: 33.33%;
-  min-width: 260px;
 }
 
 .block__text {
@@ -206,9 +201,14 @@ iframe:focus-visible {
   min-width: 0;
 }
 
+.address h2 {
+  font-weight: 700;
+  color: var(--color-dark-grey);
+}
+
 .block__text h3 {
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--color-dark-grey);
 }
 
@@ -270,7 +270,7 @@ iframe:focus-visible {
   line-height: 1.1em;
   font-size: 32px;
   color: var(--color-white);
-  font-weight: 300;
+  font-weight: 700;
   margin: 0;
   user-select: none;
 }
@@ -379,17 +379,13 @@ iframe:focus-visible {
 /* ПОДВАЛ */
 
 .footer {
-  background-color: var(--color-light-grey);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  background-color: var(--color-dark-grey);
+  text-align: left;
   padding: 12px 20px;
 }
 
 .footer__text {
-  color: var(--color-grey-text);
+  color: var(--color-white);
   font-weight: 300;
   margin: 0;
 }
@@ -416,7 +412,7 @@ iframe:focus-visible {
     grid-auto-flow: dense;
   }
 
-  /* Фирма во второй колонке, Услуги встают на свободное место слева — серые карточки не граничат */
+  /* Фирма во второй колонке, Аналитика встаёт на свободное место слева — серые карточки не граничат */
   .card_row-start {
     grid-column-start: 2;
   }
@@ -430,9 +426,6 @@ iframe:focus-visible {
     width: 100%;
   }
 
-  .block__title_about-firm {
-    width: 100%;
-  }
 }
 
 @media (max-width: 600px) {
@@ -453,6 +446,7 @@ iframe:focus-visible {
   .card_row-start {
     grid-column-start: auto;
   }
+
 
   .block__description {
     flex-direction: column;

@@ -13,10 +13,14 @@ key: index
   <li class="card card_theme_light-blue">
     <h2 class="card__title">Контакты</h2>
     <p class="card__text">
+      Россия<br>
       {% for phone in site.phones %}<a class="card__phone" href="tel:{{ phone.tel }}">{{ phone.display }}</a><br>{% endfor %}
       <a class="card__email" href="mailto:{{ site.email }}">{{ site.email }}</a>
     </p>
-    <p class="card__text">Санкт-Петербург, Россия<br>{{ site.address }}</p>
+    <p class="card__text">
+      {{ site.tashkent.country }}<br>
+      {% for phone in site.tashkent.phones %}<a class="card__phone" href="tel:{{ phone.tel }}">{{ phone.display }}</a><br>{% endfor %}
+    </p>
   </li>
   <li class="card card_theme_grey card_row-start">
     <h2 class="card__title card_theme_grey">Фирма</h2>
@@ -29,16 +33,17 @@ key: index
     </div>
   </li>
   <li class="card card_theme_white">
-    <h2 class="card__title card_theme_white">Услуги</h2>
-    <p class="card__text card__text_theme_white">Гражданское, трудовое, земельное и процессуальное право — от составления договоров до представительства в суде.</p>
+    <h2 class="card__title card_theme_white">Аналитика</h2>
+    <p class="card__text card__text_theme_white">Меры поддержки и льготы для российских IT-компаний по состоянию на июнь 2023 года.</p>
     <div class="card__links">
-      <a href="./service/" class="card__link">читать далее</a>
+      <a href="./analytics/" class="card__link">читать далее</a>
     </div>
   </li>
   <li class="card card_theme_grey">
     <h2 class="card__title card_theme_grey">Новости</h2>
-    <p class="card__text card_theme_grey">Сопровождение девелоперского greenfield проекта в Промышленном парке «Софийский».
-      <br><br><br>Выход на IT-рынок Узбекистана.
+    <p class="card__text card_theme_grey">Открытие представительства в Ташкенте.
+      <br><br>Сопровождение девелоперского greenfield проекта в Промышленном парке «Софийский».
+      <br><br>Выход на IT-рынок Узбекистана.
     </p>
     <div class="card__links">
       <a href="./news/" class="card__link">читать далее</a>

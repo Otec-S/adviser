@@ -30,6 +30,7 @@ adviser/
 │   ├── index.njk            # Главная
 │   ├── about.njk             # О фирме
 │   ├── news.njk               # Новости (рендерится из _data/news.json)
+│   ├── analytics.njk          # Аналитика (статья)
 │   ├── service.njk            # Услуги
 │   ├── clients.njk            # Клиенты (рендерится из _data/clients.json)
 │   ├── contacts.njk           # Контакты
