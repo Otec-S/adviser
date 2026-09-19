@@ -38,6 +38,6 @@ jobs:
           protocol: ftps
           port: 21
           local-dir: ./_site/
-          # Document root for adviser.ru in ISPmanager: /www/adviser.ru
-          server-dir: ./www/adviser.ru/
+          # Document root for adviser-spb.ru in ISPmanager: /www/adviser-spb.ru
+          server-dir: ./www/adviser-spb.ru/
           dangerous-clean-slate: false
