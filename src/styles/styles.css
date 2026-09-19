@@ -5,13 +5,14 @@
   --color-teal: rgb(64, 186, 188);
   /* затемнённый бирюзовый — используется под белым текстом, чтобы соответствовать WCAG AA (контраст ≥ 4.5:1) */
   --color-teal-accessible: rgb(21, 117, 119);
-  --color-grey-text: rgb(91, 91, 91);
+  --color-grey-text: rgb(51, 51, 51);
   --color-light-grey: lightgray;
   --color-white: rgb(255, 255, 255);
 
   --font-jura: 'Jura', Arial, Helvetica, sans-serif;
 
-  --header-height: 119px;
+  --font-size-text: clamp(16px, 1rem + 0.3vw, 19px);
+  --font-size-title: clamp(24px, 1.2rem + 1.2vw, 32px);
 }
 
 /* УТИЛИТЫ */
@@ -84,7 +85,6 @@ iframe:focus-visible {
 
 /* ЗАГОЛОВОК */
 .header {
-  min-height: var(--header-height);
   background-color: var(--color-dark-grey);
   display: flex;
   flex-wrap: wrap;
@@ -101,18 +101,18 @@ iframe:focus-visible {
 .header__title-link {
   display: block;
   line-height: 1.1em;
-  font-size: 35px;
+  font-size: clamp(20px, 1rem + 1.5vw, 35px);
   color: var(--color-white);
   font-weight: 700;
   text-decoration: none;
   user-select: none;
-  padding: 16px 20px;
+  padding: 12px 20px;
 }
 
 /* МЕНЮ */
 .nav {
   width: 66.67%;
-  background-color: var(--color-teal);
+  background-color: var(--color-teal-accessible);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -121,6 +121,7 @@ iframe:focus-visible {
 
 .nav__title {
   text-decoration: none;
+  text-underline-offset: 6px;
   font-family: var(--font-jura);
   font-weight: 400;
   line-height: 20px;
@@ -128,15 +129,14 @@ iframe:focus-visible {
   text-transform: uppercase;
   margin: auto;
   padding: 12px;
-  transition: transform .2s linear;
 }
 
-.nav__title:hover {
-  transform: scale(1.2);
+.nav__title:hover,
+.nav__title_active {
+  text-decoration: underline;
 }
 
 .nav__title_active {
-  color: black;
   font-weight: 700;
 }
 
@@ -170,7 +170,6 @@ iframe:focus-visible {
 
 .map {
   width: 66.67%;
-  min-width: 320px;
   min-height: 700px;
   border: 0;
   align-self: stretch;
@@ -178,12 +177,11 @@ iframe:focus-visible {
 
 .address {
   width: 33.33%;
-  min-width: 260px;
   background-color: var(--color-light-grey);
   color: var(--color-grey-text);
-  line-height: 1.3em;
-  font-size: 19px;
-  font-weight: 300;
+  line-height: 1.5;
+  font-size: var(--font-size-text);
+  font-weight: 400;
   font-style: normal;
   padding: 20px;
 }
@@ -193,9 +191,15 @@ iframe:focus-visible {
   text-decoration: none;
 }
 
+.address a:hover,
+.card__phone:hover,
+.card__email:hover {
+  text-decoration: underline;
+}
+
 .block__title {
   line-height: 1.1em;
-  font-size: 32px;
+  font-size: var(--font-size-title);
   color: var(--color-white);
   font-weight: 700;
   padding: 20px 20px;
@@ -207,15 +211,20 @@ iframe:focus-visible {
 .block__text {
   background-color: var(--color-light-grey);
   color: var(--color-grey-text);
-  line-height: 1.3em;
-  font-size: 19px;
-  font-weight: 300;
+  line-height: 1.5;
+  font-size: var(--font-size-text);
+  font-weight: 400;
   padding: 20px;
   margin: 0;
   flex: 1 1 300px;
   min-width: 0;
   max-width: 100%;
   overflow-wrap: break-word;
+}
+
+/* ограничение длины строки для удобства чтения на широких экранах */
+.block__text > * {
+  max-width: 75ch;
 }
 
 .address h2 {
@@ -285,7 +294,7 @@ iframe:focus-visible {
 
 .card__title {
   line-height: 1.1em;
-  font-size: 32px;
+  font-size: var(--font-size-title);
   color: var(--color-white);
   font-weight: 700;
   margin: 0;
@@ -294,10 +303,10 @@ iframe:focus-visible {
 
 .card__text {
   flex: 1;
-  line-height: 1.3em;
-  font-size: 19px;
+  line-height: 1.5;
+  font-size: var(--font-size-text);
   color: var(--color-white);
-  font-weight: 300;
+  font-weight: 400;
   margin: 0;
 }
 
@@ -349,11 +358,16 @@ iframe:focus-visible {
   line-height: 20px;
   color: var(--color-teal-accessible);
   text-transform: uppercase;
-  transition: transform .2s linear;
+  text-underline-offset: 4px;
 }
 
 .card__link:hover {
-  transform: scale(1.2);
+  text-decoration: underline;
+}
+
+/* на светло-сером фоне бирюзовый не даёт контраста 4.5:1 */
+.card_theme_grey .card__link {
+  color: var(--color-dark-grey);
 }
 
 /* На десктопе карточка начинает новый ряд — третья ячейка первого ряда остаётся пустой */
@@ -389,8 +403,8 @@ iframe:focus-visible {
 .client__name {
   color: var(--color-grey-text);
   line-height: 1.3em;
-  font-size: 25px;
-  font-weight: 300;
+  font-size: 20px;
+  font-weight: 400;
   text-align: center;
 }
 
@@ -420,9 +434,21 @@ iframe:focus-visible {
     width: 100%;
   }
 
+  /* меню в одну строку с горизонтальной прокруткой — sticky-хедер не занимает треть экрана */
   .nav {
-    justify-content: center;
-    gap: 8px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 4px;
+    padding: 0 8px;
+  }
+
+  .nav__title {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    white-space: nowrap;
   }
 
   .cards {
@@ -444,17 +470,42 @@ iframe:focus-visible {
     width: 100%;
   }
 
+  .map {
+    min-height: 0;
+    height: 400px;
+  }
 }
 
 @media (max-width: 600px) {
   .header__title {
-    font-size: 26px;
     text-align: center;
   }
 
   .nav__title {
     padding: 8px;
-    font-size: 13px;
+    font-size: 14px;
+  }
+
+  .content {
+    padding-bottom: 24px;
+  }
+
+  .block {
+    margin-top: 24px;
+  }
+
+  .cards {
+    padding-top: 24px;
+  }
+
+  .card {
+    min-height: auto;
+  }
+
+  .block__title,
+  .block__text,
+  .card {
+    padding: 16px;
   }
 
   .cards {
@@ -472,9 +523,5 @@ iframe:focus-visible {
 
   .block__photo-place {
     align-self: center;
-  }
-
-  .map {
-    height: 400px;
   }
 }

@@ -46,10 +46,32 @@
     <p class="header__title"><a class="header__title-link" href="/">{{ site.name }}</a></p>
     <nav class="nav" aria-label="Основная навигация">
       {% for item in site.nav %}
-      <a href="{{ item.url }}" class="nav__title{% if item.key == page.key %} nav__title_active{% endif %}"{% if item.key == page.key %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      <a href="{{ item.url }}" class="nav__title{% if item.key == key %} nav__title_active{% endif %}"{% if item.key == key %} aria-current="page"{% endif %}>{{ item.title }}</a>
       {% endfor %}
     </nav>
   </header>
+  <script>
+    // Прокручиваемое меню (≤900px): восстанавливаем прокрутку после перехода, иначе держим активный пункт в видимой области
+    (function () {
+      var nav = document.querySelector('.nav');
+      if (!nav || nav.scrollWidth <= nav.clientWidth) return;
+      var key = 'navScrollLeft';
+      var saved = null;
+      try { saved = sessionStorage.getItem(key); } catch (e) {}
+      if (saved !== null) nav.scrollLeft = Number(saved);
+      var active = nav.querySelector('[aria-current="page"]');
+      if (active) {
+        var left = active.offsetLeft - nav.offsetLeft;
+        var right = left + active.offsetWidth;
+        if (left < nav.scrollLeft || right > nav.scrollLeft + nav.clientWidth) {
+          nav.scrollLeft = left - (nav.clientWidth - active.offsetWidth) / 2;
+        }
+      }
+      nav.addEventListener('click', function () {
+        try { sessionStorage.setItem(key, nav.scrollLeft); } catch (e) {}
+      });
+    })();
+  </script>
 
   <main class="content{% if contentModifier %} {{ contentModifier }}{% endif %}">
     {{ content | safe }}
