@@ -157,8 +157,9 @@ iframe:focus-visible {
 .map {
   width: 66.67%;
   min-width: 320px;
-  height: 700px;
+  min-height: 700px;
   border: 0;
+  align-self: stretch;
 }
 
 .address {
@@ -199,6 +200,8 @@ iframe:focus-visible {
   margin: 0;
   flex: 1 1 300px;
   min-width: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .address h2 {
@@ -358,12 +361,13 @@ iframe:focus-visible {
 }
 
 .client {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
 }
 
 .client__logo {
   height: 200px;
-  width: 300px;
+  width: 100%;
   object-fit: contain;
   display: block;
 }
