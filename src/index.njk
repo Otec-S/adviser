@@ -1,0 +1,54 @@
+---
+layout: layout.njk
+title: Главная
+description: Юридическая фирма «Эдвайзер» — правовая поддержка бизнеса, сопровождение сделок и представление интересов в судах в Санкт-Петербурге.
+key: index
+---
+<ul class="cards">
+  <li class="card card_theme_dark-grey">
+    <h2 class="card__title">Компетенция</h2>
+    <p class="card__text">Правовая поддержка предпринимательской деятельности.</p>
+    <p class="card__text">Представление интересов в судах.</p>
+  </li>
+  <li class="card card_theme_light-blue">
+    <h2 class="card__title">Контакты</h2>
+    <p class="card__text">
+      {% for phone in site.phones %}<a class="card__phone" href="tel:{{ phone.tel }}">{{ phone.display }}</a><br>{% endfor %}
+      <a class="card__email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </p>
+    <p class="card__text">Санкт-Петербург, Россия<br>{{ site.address }}</p>
+  </li>
+  <li class="card card_theme_white card_action">
+    <h2 class="card__title card_theme_white">Консультация</h2>
+    <p class="card__text card__text_theme_white">Расскажите о своей задаче — ответим и предложим решение.</p>
+    <div class="card__links">
+      <a href="./contacts/" class="card__link card__link_button">записаться</a>
+    </div>
+  </li>
+  <li class="card card_theme_grey">
+    <h2 class="card__title card_theme_grey">Фирма</h2>
+    <p class="card__text card_theme_grey">Фирма образована в 1999 году в составе немецкого холдинга SP AG.
+      По 2011 год обслуживала один из крупнейших проектов Санкт-Петербурга в области коммерческой недвижимости –
+      строительство Торгового центра STOCKMANN на Невском пр. 114.
+    </p>
+    <div class="card__links">
+      <a href="./about/" class="card__link">читать далее</a>
+    </div>
+  </li>
+  <li class="card card_theme_white">
+    <h2 class="card__title card_theme_white">Услуги</h2>
+    <p class="card__text card__text_theme_white">Гражданское, трудовое, земельное и процессуальное право — от составления договоров до представительства в суде.</p>
+    <div class="card__links">
+      <a href="./service/" class="card__link">читать далее</a>
+    </div>
+  </li>
+  <li class="card card_theme_grey">
+    <h2 class="card__title card_theme_grey">Новости</h2>
+    <p class="card__text card_theme_grey">Сопровождение девелоперского greenfield проекта в Промышленном парке «Софийский».
+      <br><br><br>Выход на IT-рынок Узбекистана.
+    </p>
+    <div class="card__links">
+      <a href="./news/" class="card__link">читать далее</a>
+    </div>
+  </li>
+</ul>

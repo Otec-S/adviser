@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} — {{ site.shortName }}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles/normalize.css">
+  <link rel="stylesheet" href="/styles/styles.css">
+</head>
+
+<body class="page">
+
+  <header class="header">
+    <h1 class="header__title">{{ site.name }}</h1>
+    <nav class="nav" aria-label="Основная навигация">
+      {% for item in site.nav %}
+      <a href="{{ item.url }}" class="nav__title{% if item.key == page.key %} nav__title_active{% endif %}"{% if item.key == page.key %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+  </header>
+
+  <main class="content{% if contentModifier %} {{ contentModifier }}{% endif %}">
+    {{ content | safe }}
+  </main>
+
+  <footer class="footer">
+    <p class="footer__text">© {{ buildYear }} {{ site.name }}</p>
+  </footer>
+
+</body>
+
+</html>

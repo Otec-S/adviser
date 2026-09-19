@@ -1,0 +1,18 @@
+{
+  "name": "Юридическая фирма «Эдвайзер»",
+  "shortName": "ЮФ «Эдвайзер»",
+  "phones": [
+    { "display": "+7 (921) 942-36-97", "tel": "+79219423697" },
+    { "display": "+7 (952) 206-67-78", "tel": "+79522066778" }
+  ],
+  "email": "adviser@bk.ru",
+  "address": "ул. Магнитогорская, 3-2-1, Санкт-Петербург, Россия, 195027",
+  "nav": [
+    { "url": "/", "title": "главная", "key": "index" },
+    { "url": "/about/", "title": "о фирме", "key": "about" },
+    { "url": "/news/", "title": "новости", "key": "news" },
+    { "url": "/service/", "title": "услуги", "key": "service" },
+    { "url": "/clients/", "title": "клиенты", "key": "clients" },
+    { "url": "/contacts/", "title": "контакты", "key": "contacts" }
+  ]
+}

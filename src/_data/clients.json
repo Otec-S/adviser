@@ -1,0 +1,18 @@
+[
+  { "logo": "srv-logo.png", "name": "SRV", "alt": "СРВ" },
+  { "logo": "ekool.png", "name": "eKool", "alt": "eKool" },
+  { "logo": "importhome.png", "name": "IMPORTHOME", "alt": "Импорт Хоум" },
+  { "logo": "rete.png", "name": "Rete", "alt": "Рете" },
+  { "logo": "forward.png", "name": "Форвард", "alt": "форвард" },
+  { "logo": "aerolight.png", "name": "Аэролайт", "alt": "Аэролайт" },
+  { "logo": "avi-media.png", "name": "AVI MEDIA", "alt": "АВИ МЕДИА" },
+  { "logo": "igm.png", "name": "ЭМИ", "alt": "ЭМИ" },
+  { "logo": "architeco.png", "name": "Архитэко", "alt": "Архитэко" },
+  { "logo": "vsp.png", "name": "ВСП", "alt": "ВСП" },
+  { "logo": "imm.png", "name": "ИММ", "alt": "ИММ" },
+  { "logo": "opto.png", "name": "Оптосенс", "alt": "Оптосенс" },
+  { "logo": "pdm.png", "name": "ПДМ", "alt": "ПДМ" },
+  { "logo": "rb.png", "name": "РБ Транс", "alt": "РБ Транс" },
+  { "logo": "topfloor.png", "name": "Топ Флор", "alt": "Топ Флор" },
+  { "logo": "trastvet.png", "name": "Траствет", "alt": "Траствет" }
+]
