@@ -80,11 +80,17 @@ iframe:focus-visible {
 
 .header__title {
   width: 33.33%;
+  margin: auto;
+}
+
+.header__title-link {
+  display: block;
   line-height: 1.1em;
   font-size: 35px;
   color: var(--color-white);
   font-weight: 300;
-  margin: auto;
+  text-decoration: none;
+  user-select: none;
   padding: 16px 20px;
 }
 
@@ -173,6 +179,7 @@ iframe:focus-visible {
   padding: 20px 20px;
   margin: 0;
   background-color: var(--color-dark-grey);
+  user-select: none;
 }
 
 .block__title_about-firm {
@@ -255,6 +262,7 @@ iframe:focus-visible {
   color: var(--color-white);
   font-weight: 300;
   margin: 0;
+  user-select: none;
 }
 
 .card__text {
@@ -269,7 +277,7 @@ iframe:focus-visible {
 .card__phone,
 .card__email {
   color: inherit;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .card_theme_dark-grey {
@@ -301,10 +309,6 @@ iframe:focus-visible {
 
 .card__text_theme_white {
   color: var(--color-grey-text);
-}
-
-.card_action {
-  border: 2px solid var(--color-teal-accessible);
 }
 
 .card__links {
@@ -371,14 +375,13 @@ iframe:focus-visible {
 /* ПОДВАЛ */
 
 .footer {
-  min-height: 119px;
   background-color: var(--color-light-grey);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
+  padding: 12px 20px;
 }
 
 .footer__text {
